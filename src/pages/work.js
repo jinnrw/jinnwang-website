@@ -8,10 +8,11 @@ const Content = styled.div`
   width: 100%;
   max-width: 1440px;
   margin: 80px auto 0;
-  padding: 0 80px;
+  padding: 0 80px 200px;
   display: flex;
 `;
 
+// Filters
 const FilterContainer = styled.div`
   position: fixed;
   top: 180px;
@@ -20,13 +21,47 @@ const FilterContainer = styled.div`
   margin-right: 80px;
 `;
 
-const Filters = styled.div``;
-
-const Filter = styled.div`
-  margin-bottom: 14px;
-  padding-left: 20px;
+const Filters = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
+const Filter = styled.div`
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 14px;
+  padding-left: 20px;
+  display: inline-block;
+  color: #24262870;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #242628;
+  }
+
+  &.selected {
+    color: #242628;
+
+    &:before {
+      background-color: #3eb0efcc;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 8px;
+    height: 16px;
+    border-radius: 4px;
+    background-color: #8a8f9b;
+    transition: background-color 0.3s ease;
+  }
+`;
+
+// Projects
 const ProjectContainer = styled.div`
   width: 67%;
   margin: 0 auto;
@@ -50,9 +85,25 @@ const ProjectInfo = styled.div`
 
 const Tags = styled.div`
   margin-bottom: 10px;
+`;
 
-  .tag {
-    padding-right: 8px;
+const Tag = styled.span`
+  margin-right: 12px;
+
+  &.selected {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: calc(100% + 10px);
+      height: 100%;
+      transform: skew(-30deg);
+      background: #3eb0ef60;
+      z-index: -1;
+    }
   }
 `;
 
@@ -86,25 +137,54 @@ const MoreProjects = styled.div`
 `;
 
 // render
-const renderFilter = (filter, index) => (
+const renderFilter = (filter, filterBy, setFilterBy) => (
   <Filter
-    key={index}
+    key={filter}
     onClick={() => {
-      console.log(filter);
+      setFilterBy(filter);
     }}
+    className={filter === filterBy ? "selected" : ""}
   >
     {filter}
   </Filter>
 );
 
-const renderProject = (id, name, description, tags, imgSrc, linkUrl) => (
+const renderProjects = (filterBy, projects) => {
+  return projects
+    .filter((project) => {
+      if (filterBy) return project.tags.includes(filterBy);
+      else return project;
+    })
+    .map((filteredProject) => {
+      const { id, name, description, tags, imgSrc, linkUrl } = filteredProject;
+      return renderProject(
+        id,
+        name,
+        description,
+        tags,
+        imgSrc,
+        linkUrl,
+        filterBy
+      );
+    });
+};
+
+const renderProject = (
+  id,
+  name,
+  description,
+  tags,
+  imgSrc,
+  linkUrl,
+  filterBy
+) => (
   <Project key={id}>
     <ProjectInfo>
       <Tags>
         {tags.map((tag, index) => (
-          <span key={index} className="tag">
+          <Tag key={index} className={filterBy === tag ? "selected" : ""}>
             {tag}
-          </span>
+          </Tag>
         ))}
       </Tags>
       <h2>{name}</h2>
@@ -122,33 +202,40 @@ const renderProject = (id, name, description, tags, imgSrc, linkUrl) => (
 );
 
 const Work = () => {
+  const projects = PROJECTS;
+  const [filterBy, setFilterBy] = React.useState(null);
+
   return (
     <Layout>
       <Content>
         <FilterContainer>
           <h3>My Works</h3>
-          <Filter>Show All</Filter>
+          <Filter
+            onClick={() => {
+              setFilterBy(null);
+            }}
+            className={filterBy ? "" : "selected"}
+          >
+            Show All
+          </Filter>
           <Filters>
-            {PROJECT_FILTERS.map((filter, index) =>
-              renderFilter(filter, index)
+            {PROJECT_FILTERS.map((filter) =>
+              renderFilter(filter, filterBy, setFilterBy)
             )}
           </Filters>
         </FilterContainer>
         <ProjectContainer>
-          {PROJECTS.map((project) =>
-            renderProject(
-              project.id,
-              project.name,
-              project.description,
-              project.tags,
-              project.imgSrc,
-              project.linkUrl
-            )
+          {renderProjects(filterBy, projects)}
+          {filterBy ? (
+            <></>
+          ) : (
+            <MoreProjects>
+              <h2>More Projects To Come</h2>
+              <p>
+                I'll be sharing more side projects in the future :)
+              </p>
+            </MoreProjects>
           )}
-          <MoreProjects>
-            <h2>More Projects To Come</h2>
-            <p>I'll be sharing more side projects in the future. Stay tuned :)</p>
-          </MoreProjects>
         </ProjectContainer>
       </Content>
       <Footer />

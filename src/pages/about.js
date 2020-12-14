@@ -1,14 +1,14 @@
 import * as React from "react";
-import { Layout, Footer } from "../components";
-import { ABOUT_ME, WORK_EXPERIENCE, SKILLS } from "../constants";
+import { Layout, Footer, Skills } from "../components";
+import { ABOUT_ME, WORK_EXPERIENCE } from "../constants";
 import styled from "styled-components";
 import { imagePath } from "../utils/imagePath";
 
 // CONTENT
 const Content = styled.div`
   max-width: 1000px;
-  margin: 0 auto;
-  margin-top: 80px;
+  margin: 80px auto 0;
+  padding: 0 80px 200px;
 `;
 
 // SECTION
@@ -16,7 +16,7 @@ const Section = styled.div`
   margin-bottom: 100px;
 `;
 
-const Heading = styled.div`
+const Heading = styled.h2`
   font-size: 26px;
   font-weight: 500;
   margin-bottom: 40px;
@@ -26,6 +26,7 @@ const Heading = styled.div`
 // ABOUT ME
 const AboutMeText = styled.div`
   white-space: pre-line;
+  line-height: 26px;
 `;
 
 // EXPERIENCE
@@ -41,7 +42,7 @@ const Experience = styled.div`
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 3px;
-    color: #343f44;
+    color: #51626a;
   }
 
   .job-title {
@@ -91,43 +92,17 @@ const renderExperience = (id, company, title, summary, period, index) => {
   );
 };
 
-// SKILL
-const SkillContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  padding: 0 50px;
-`;
-
-const Skill = styled.div`
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  padding: 20px 16px;
-  border-radius: 16px;
-
-  > :first-child {
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-
-  > :nth-child(2) {
-    font-size: 14px;
-  }
-`;
-
-const renderSkill = (id, category, list) => (
-  <Skill key={id}>
-    <div>{category}</div>
-    <div>{list}</div>
-  </Skill>
-);
-
 const About = (props) => {
   return (
     <Layout>
       <Content>
         <Section>
           <Heading>About Me</Heading>
-          <AboutMeText>{ABOUT_ME}</AboutMeText>
+          <AboutMeText
+            dangerouslySetInnerHTML={{
+              __html: ABOUT_ME,
+            }}
+          ></AboutMeText>
         </Section>
         <Section>
           <Heading>Work Experience</Heading>
@@ -146,11 +121,7 @@ const About = (props) => {
         </Section>
         <Section>
           <Heading>Skills</Heading>
-          <SkillContainer>
-            {SKILLS.map((skill) =>
-              renderSkill(skill.id, skill.category, skill.list)
-            )}
-          </SkillContainer>
+            <Skills />
         </Section>
       </Content>
       <Footer />

@@ -14,7 +14,7 @@ const Content = styled.div`
 const HeroText = styled.div`
   width: 430px;
   white-space: break-spaces;
-  font-size: 26px;
+  font-size: 24px;
   margin-right: 50px;
 
   > :first-child {
@@ -22,7 +22,7 @@ const HeroText = styled.div`
   }
 
   > :nth-child(2) {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
   }
 `;
@@ -51,7 +51,7 @@ const Horizon = styled.div`
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout page="home">
       <Content>
         <Horizon></Horizon>
         <HeroText>

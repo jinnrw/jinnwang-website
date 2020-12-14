@@ -8,17 +8,34 @@ const LayoutContainer = styled.div`
   flex-direction: column;
   min-height: 100vh;
   padding: 0 20px;
+  position: relative;
 `;
 
 const GlobalStyle = createGlobalStyle`
   body, 
-  body * {
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
     font-family: 'Inter',sans-serif;
     color: #242628;
   }
 
   body {
     font-size: 16px;
+  }
+
+  code {
+    font-family: 'Fira Mono', sans-serif;
+    color: #383838;
+    background-color: #3eb0ef60;
+    font-size: 0.9em;
+  }
+
+  button {
+    border: none;
+    background: none;
   }
 
   ul,
@@ -53,7 +70,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ page, children }) => {
   return (
     <>
       <Helmet>
@@ -62,7 +79,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <LayoutContainer>
         <GlobalStyle theme="purple" />
-        <NavBar />
+        <NavBar page={page} />
         {children}
       </LayoutContainer>
     </>

@@ -6,6 +6,8 @@ import styled from "styled-components";
 const FooterContainer = styled.div`
   width: 100%;
   padding: 20px;
+  position: absolute;
+  bottom: 0;
 `;
 
 const Content = styled.div`

@@ -2,7 +2,7 @@ export const ABOUT_ME = `My area of expertise is frontend development and everyt
 My emphasis is frontend technologies and modern Javascript frameworks, and I’m passionate about building web-based UI, interaction and writing high quality codes. \n 
 During my early years of career, with backgrounds in Engineering and Psychology, I worked as a UX Designer at a consumer electronics company – BenQ. I was responsible to provide user-centric solutions for various award winning products. Working as a UX designer, I always respect highly on people who can bring great designs to life. And in 2015, I decided to go back to school and train to become a frontend developer. \n
  During the day, I work with an amazing creative team and software engineers in an agile environment, translating design mockups into responsive layouts, tweening interactions and animations, building and managing the frontend of our various web applications. \n
- And after hours, I fire up my code editor and start composing one of my many side projects. I enjoy working as a frontend developer and continue learning new techniques – React, Vue, ES6, etc. \n I also have experience with Node.js, Express, Firebase and Three.js. Check out my Github, if you’d like to see more!`;
+ And after hours, I fire up my code editor and start composing one of my many side projects. I enjoy working as a frontend developer and continue learning new techniques – <code>JAMStack</code>, <code>devOps</code>, etc. \n I also have experience with Node.js, Express, Firebase and Three.js. Check out my Github, if you’d like to see more!`;
 
 export const WORK_EXPERIENCE = [
   {
@@ -55,34 +55,56 @@ export const WORK_EXPERIENCE = [
 
 export const SKILLS = [
   {
-    id: 1,
-    category: "JS Framework",
-    list: "React, Redux | Vue, Vuex | AngularJS",
+    name: "React",
+    imgSrc: "./logo_react.png",
   },
   {
-    id: 2,
-    category: "HTTP Request",
-    list: "AJAX, API, Promise, Axios, GraphQL",
+    name: "Redux",
+    imgSrc: "./logo_redux.png",
   },
   {
-    id: 3,
-    category: "Tooling",
-    list: "Grunt, Gulp, Webpack, SASS, Pug",
+    name: "Vue",
+    imgSrc: "./logo_vue.png",
   },
   {
-    id: 4,
-    category: "Server-side",
-    list: "Node, Express, Firebase, ASP.NET",
+    name: "AngularJS",
+    imgSrc: "./logo_angular.png",
   },
   {
-    id: 5,
-    category: "UI & Interaction",
-    list: "GSAP, Three.js, Hammer js, other JS libraries",
+    name: "GraphQL",
+    imgSrc: "./logo_graphql.png",
   },
   {
-    id: 6,
-    category: "Continuing Learning",
-    list: "TypeScript, Jest, JAMStack, devOps",
+    name: "SASS",
+    imgSrc: "./logo_sass.png",
+  },
+  {
+    name: "TypeScript",
+    imgSrc: "./logo_typescript.png",
+  },
+  {
+    name: "Jest",
+    imgSrc: "./logo_jest.png",
+  },
+  {
+    name: "Node.js",
+    imgSrc: "./logo_node.png",
+  },
+  {
+    name: "Firebase",
+    imgSrc: "./logo_firebase.png",
+  },
+  {
+    name: "GSAP",
+    imgSrc: "./logo_gsap.png",
+  },
+  {
+    name: "Three.js",
+    imgSrc: "./logo_threejs.png",
+  },
+  {
+    name: "Continuous learning",
+    imgSrc: "./icon_book.png",
   },
 ];
 
@@ -90,7 +112,8 @@ export const PROJECTS = [
   {
     id: 1,
     name: "Rick and Morty Search",
-    description: "Search for Rick and Morty characters via GraphQL using The Rick and Morty API.",
+    description:
+      "Search for Rick and Morty characters via GraphQL using The Rick and Morty API.",
     tags: ["React", "Redux", "GraphQL", "Next.js"],
     imgSrc: "./project_rickandmorty.png",
     linkUrl: "https://github.com/jinnrw/rickandmorty-search",
@@ -124,10 +147,11 @@ export const PROJECTS = [
   {
     id: 5,
     name: "3D Racing in Three.js",
-    description: "A 3D racing game in a web browser, using Three.js, a WebGL library.",
+    description:
+      "A 3D racing game in a web browser, using Three.js, a WebGL library.",
     tags: ["WebGL", "Three.js", "Parcel.js"],
     imgSrc: "./project_3d_cars.png",
-    linkUrl: "https://github.com/jinnrw/3D-racing-three.js"
+    linkUrl: "https://github.com/jinnrw/3D-racing-three.js",
   },
   {
     id: 6,
@@ -178,7 +202,8 @@ export const PROJECTS = [
 ];
 
 export const PROJECT_FILTERS = [
-  "React, Redux",
+  "React",
+  "Redux",
   "Vue",
   "GraphQL",
   "Node.js",

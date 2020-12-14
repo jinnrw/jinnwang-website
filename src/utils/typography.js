@@ -2,14 +2,6 @@ import Typography from "typography"
 const typography = new Typography({
   googleFonts: [
     {
-      name: 'Open Sans',
-      styles: [
-        '300',
-        '400',
-        '700',
-      ],
-    },
-    {
       name: 'Jost',
       styles: [
         '300',
@@ -27,7 +19,12 @@ const typography = new Typography({
         '600',
       ],
     },
-    
+    {
+      name: 'Fira Mono',
+      styles: [
+        '400',
+      ],
+    },
   ],
 })
 
