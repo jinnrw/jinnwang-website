@@ -22,7 +22,7 @@ const NavBarContainer = styled.ul`
 
 const LinkContainer = styled.div`
   > * {
-    padding: 0 10px;
+    margin: 0 10px;
   }
 
   a {

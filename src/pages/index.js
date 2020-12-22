@@ -1,36 +1,39 @@
 import * as React from "react";
 import { Layout } from "../components";
+import Canvas from "../components/Canvas";
 import styled from "styled-components";
 
 const Content = styled.div`
-  width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex: 1;
-  justify-content: center;
   align-items: center;
 `;
 
+const HeroContainer = styled.div`
+  width: 50%;
+  padding-right: 100px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  user-select: none;
+`;
+
 const HeroText = styled.div`
-  width: 430px;
+  font-family: "Nunito Sans", sans-serif;
+  max-width: 450px;
   white-space: break-spaces;
-  font-size: 24px;
-  margin-right: 50px;
 
   > :first-child {
+    font-size: 28px;
     margin-bottom: 16px;
+    font-weight: 700;
   }
 
   > :nth-child(2) {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
   }
-`;
-
-const HeroCanvas = styled.div`
-  width: 500px;
-  height: 500px;
-  background: #ddd;
 `;
 
 const Horizon = styled.div`
@@ -54,17 +57,19 @@ const IndexPage = () => {
     <Layout page="home">
       <Content>
         <Horizon></Horizon>
-        <HeroText>
-          <div>
-            Hello, I’m Jinn Wang. {`\n`}
-            Frontend Developer in Vancouver. {`\n`}
-          </div>
-          <div>
-            I’m passionate about building the view for users to interact with,
-            the client-side.
-          </div>
-        </HeroText>
-        <HeroCanvas>Placeholder for 3D</HeroCanvas>
+        <Canvas />
+        <HeroContainer>
+          <HeroText>
+            <div>
+              Hello, I’m Jinn Wang. {`\n`}
+              Frontend Developer in Vancouver. {`\n`}
+            </div>
+            <div>
+              I’m passionate about building the view for users to interact with,
+              the client-side.
+            </div>
+          </HeroText>
+        </HeroContainer>
       </Content>
     </Layout>
   );

@@ -211,3 +211,20 @@ export const PROJECT_FILTERS = [
   "Animation",
   "HTML Canvas",
 ];
+
+export const CANVAS_ASSETS = {
+  texture: {
+    coin:[
+      "./canvas/logo_react.png",
+      "./canvas/logo_redux.png",
+      "./canvas/logo_vue.png",
+      "./canvas/logo_angular.png",
+      "./canvas/logo_jest.png",
+      "./canvas/logo_graphql.png",
+      "./canvas/logo_node.png",
+      "./canvas/logo_gsap.png",
+      "./canvas/logo_threejs.png",
+     ],
+     cube: "./canvas/texture_brick.png"
+  }
+}
