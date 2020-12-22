@@ -26,7 +26,7 @@ const Heading = styled.h2`
 // ABOUT ME
 const AboutMeText = styled.div`
   white-space: pre-line;
-  line-height: 26px;
+  line-height: 28px;
 `;
 
 // EXPERIENCE

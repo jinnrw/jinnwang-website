@@ -11,6 +11,11 @@ const LayoutContainer = styled.div`
   position: relative;
 `;
 
+const globalColors = {
+  blue: "#3eb0ef",
+  lightblue: "#3eb0ef60",
+}
+
 const GlobalStyle = createGlobalStyle`
   body, 
   h1,
@@ -29,8 +34,43 @@ const GlobalStyle = createGlobalStyle`
   code {
     font-family: 'Fira Mono', sans-serif;
     color: #383838;
-    background-color: #3eb0ef60;
+    background-color: ${globalColors.lightblue};
     font-size: 0.9em;
+  }
+
+  mark {
+    position: relative;
+    background-color: transparent;
+    color: inherit;
+    
+    &:before {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      left: -5px;
+      top: 2px;
+      border: 2px solid ${globalColors.blue};
+      border-right-color: transparent;
+      width: 117%;
+      height: 22px;
+      transform: rotate(2deg);
+      opacity: 0.7;
+      border-radius: 8px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -0.5em;
+      top: 0.1em;
+      border: 2px solid ${globalColors.blue};
+      border-left-color: transparent;
+      border-top-color: transparent;
+      width: 115%;
+      height: 24px;
+      transform: rotate(-1deg);
+      opacity: 0.7;
+    }
   }
 
   button {

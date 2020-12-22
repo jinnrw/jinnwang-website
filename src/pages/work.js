@@ -34,7 +34,7 @@ const Filter = styled.div`
   padding-left: 20px;
   display: inline-block;
   color: #24262870;
-  transition: color 0.3s ease;
+  transition: color .2s ease;
 
   &:hover {
     color: #242628;
@@ -57,7 +57,7 @@ const Filter = styled.div`
     height: 16px;
     border-radius: 4px;
     background-color: #8a8f9b;
-    transition: background-color 0.3s ease;
+    transition: background-color .2s ease;
   }
 `;
 
@@ -85,6 +85,8 @@ const ProjectInfo = styled.div`
 
 const Tags = styled.div`
   margin-bottom: 10px;
+  color: #51626a;
+  font-size: 14px;
 `;
 
 const Tag = styled.span`

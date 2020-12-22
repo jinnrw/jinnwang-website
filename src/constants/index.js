@@ -2,7 +2,7 @@ export const ABOUT_ME = `My area of expertise is frontend development and everyt
 My emphasis is frontend technologies and modern Javascript frameworks, and I’m passionate about building web-based UI, interaction and writing high quality codes. \n 
 During my early years of career, with backgrounds in Engineering and Psychology, I worked as a UX Designer at a consumer electronics company – BenQ. I was responsible to provide user-centric solutions for various award winning products. Working as a UX designer, I always respect highly on people who can bring great designs to life. And in 2015, I decided to go back to school and train to become a frontend developer. \n
  During the day, I work with an amazing creative team and software engineers in an agile environment, translating design mockups into responsive layouts, tweening interactions and animations, building and managing the frontend of our various web applications. \n
- And after hours, I fire up my code editor and start composing one of my many side projects. I enjoy working as a frontend developer and continue learning new techniques – <code>JAMStack</code>, <code>devOps</code>, etc. \n I also have experience with Node.js, Express, Firebase and Three.js. Check out my Github, if you’d like to see more!`;
+ And after hours, I fire up my code editor and start composing one of my many side projects. I enjoy working as a frontend developer and continue learning new techniques – <mark>JAMStack</mark>, <mark>devOps</mark>, etc. \n I also have experience with <mark>Node.js</mark>, <mark>Express</mark>, <mark>Firebase</mark> and <mark>Three.js</mark>. Check out my Github, if you’d like to see more!`;
 
 export const WORK_EXPERIENCE = [
   {
@@ -120,23 +120,32 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    name: "YouTube with Lyrics",
-    description: "Listen to your favourite YouTube playlists with lyrics.",
-    tags: ["Vue", "Vuex, axios, Moment.js, API"],
-    imgSrc: "./project_youtube.png",
-    linkUrl: "https://github.com/jinnrw/youtube-with-lyrics",
+    name: "Trello-alike",
+    description:
+      "A Trello inspired list-making app and is still in progress. The idea is to create a public board and collaborate with your team, with a given url.",
+    tags: ["React", "react-beautiful-dnd", "Node.js", "Express.js", "Redis"],
+    imgSrc: "./project_trello.png",
+    linkUrl: "https://github.com/jinnrw/trello-alike",
   },
   {
     id: 3,
     name: "Note App",
     description:
       "A full stack note taking app built with React, Express, Node and Firebase.",
-    tags: ["React", "Node.js", "Express.js, Firebase"],
+    tags: ["React", "Node.js", "Express.js", "Firebase"],
     imgSrc: "./project_note_app.png",
     linkUrl: "https://github.com/jinnrw/note-taking-React-Express",
   },
   {
     id: 4,
+    name: "YouTube with Lyrics",
+    description: "Listen to your favourite YouTube playlists with lyrics.",
+    tags: ["Vue", "Vuex", "axios", "Moment.js", "API"],
+    imgSrc: "./project_youtube.png",
+    linkUrl: "https://github.com/jinnrw/youtube-with-lyrics",
+  },
+  {
+    id: 5,
     name: "3D Cards in Three.js",
     description:
       "Show 3D rendering cards in the web browser, using Three.js, a WebGL library. The idea is to provide a better experience showcasing the foil material on cards.",
@@ -145,22 +154,13 @@ export const PROJECTS = [
     linkUrl: "https://github.com/jinnrw/3D-cards-in-three.js",
   },
   {
-    id: 5,
+    id: 6,
     name: "3D Racing in Three.js",
     description:
       "A 3D racing game in a web browser, using Three.js, a WebGL library.",
     tags: ["WebGL", "Three.js", "Parcel.js"],
     imgSrc: "./project_3d_cars.png",
     linkUrl: "https://github.com/jinnrw/3D-racing-three.js",
-  },
-  {
-    id: 6,
-    name: "Trello-alike",
-    description:
-      "A Trello inspired list-making app and is still in progress. The idea is to create a public board and collaborate with your team, with a given url.",
-    tags: ["React", " Node.js"],
-    imgSrc: "./project_3d_cards.png",
-    linkUrl: "https://github.com/jinnrw/trello-alike",
   },
   {
     id: 7,
