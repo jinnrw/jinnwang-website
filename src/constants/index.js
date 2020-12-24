@@ -167,7 +167,7 @@ export const PROJECTS = [
     name: "HTML Canvas Platform Game",
     description:
       "A platform game includes camera, player movements, game physics and controls. \n Definitely small and unfinished, but I really enjoyed being completely lost in the begining but was able to overcome in the end :)",
-    tags: ["HTML canvas"],
+    tags: ["HTML Canvas"],
     imgSrc: "./project_html_platform_game.png",
     linkUrl: "https://github.com/jinnrw/html-canvas-platform-game",
   },
@@ -211,3 +211,20 @@ export const PROJECT_FILTERS = [
   "Animation",
   "HTML Canvas",
 ];
+
+export const CANVAS_ASSETS = {
+  texture: {
+    coin:[
+      "./canvas/logo_react.png",
+      "./canvas/logo_redux.png",
+      "./canvas/logo_vue.png",
+      "./canvas/logo_angular.png",
+      "./canvas/logo_jest.png",
+      "./canvas/logo_graphql.png",
+      "./canvas/logo_node.png",
+      "./canvas/logo_gsap.png",
+      "./canvas/logo_threejs.png",
+     ],
+     cube: "./canvas/texture_brick.png"
+  }
+}
