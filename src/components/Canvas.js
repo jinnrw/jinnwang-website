@@ -12,13 +12,15 @@ const CanvasContainer = styled.div`
   height: 100%;
   overflow: hidden;
   z-index: 0;
-  
+
   &.active {
     cursor: url(${imagePath("./canvas/cursor-hand.png")}) 0 0, pointer;
   }
 `;
 
 // Utils
+let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 function rule3(v, vmin, vmax, tmin, tmax) {
   let nv = Math.max(Math.min(v, vmax), vmin);
   let dv = vmax - vmin;
@@ -68,19 +70,20 @@ const Canvas = () => {
       coinTimeoutId,
       frameId;
 
-    let HEIGHT,
-      WIDTH,
-      windowHalfX,
-      windowHalfY,
-      mousePos = { x: 0, y: 0 },
-      cameraPosXOffset = -100;
+    let HEIGHT, WIDTH, windowHalfX, windowHalfY;
 
     // Default props
     let fieldOfView = 60,
       nearPlane = 1,
       farPlane = 2000,
       animationDuration = 2000,
-      showCoin = false;
+      showCoin = false,
+      mousePos = { x: 0, y: 0 },
+      cameraPos = {
+        x: -100,
+        y: 0,
+        z: 600,
+      };
 
     const coinDefaultProps = {
       visibility: false,
@@ -103,7 +106,6 @@ const Canvas = () => {
     // Init
     function init() {
       scene = new THREE.Scene();
-      // scene.translateX(200);
       HEIGHT = window.innerHeight;
       WIDTH = window.innerWidth;
       aspectRatio = WIDTH / HEIGHT;
@@ -115,8 +117,13 @@ const Canvas = () => {
         nearPlane,
         farPlane
       );
-      camera.position.set(cameraPosXOffset, 0, 600);
-      camera.lookAt(new THREE.Vector3(cameraPosXOffset, 0, 0));
+
+      // Set Camera
+      if (isMobile) {
+        setCameraOnMobile();
+      } else {
+        setCamera(cameraPos.x, cameraPos.y, cameraPos.z);
+      }
 
       // Renderer
       renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -135,6 +142,29 @@ const Canvas = () => {
       mountNode.addEventListener("click", onTargetClick, false);
     }
 
+    function setCamera(posX, posY, posZ) {
+      camera.position.set(posX, posY, posZ);
+      camera.lookAt(new THREE.Vector3(posX, posY, 0));
+    }
+
+    function setCameraOnMobile() {
+      if (mobileOrientation() === "portrait" && WIDTH < 768) {
+        setCamera(0, -100, 800);
+      } else if (mobileOrientation() === "landscape" && WIDTH <= 812) {
+        camera.position.set(cameraPos.x, 0, 500);
+      } else {
+        setCamera(cameraPos.x, cameraPos.y, cameraPos.z);
+      }
+    }
+
+    function mobileOrientation() {
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        return "portrait";
+      } else if (window.matchMedia("(orientation: landscape)").matches) {
+        return "landscape";
+      }
+    }
+
     function onWindowResize() {
       WIDTH = window.innerWidth;
       HEIGHT = window.innerHeight;
@@ -143,10 +173,10 @@ const Canvas = () => {
       renderer.setSize(WIDTH, HEIGHT);
       camera.aspect = WIDTH / HEIGHT;
       camera.updateProjectionMatrix();
+      if (isMobile) setCameraOnMobile();
     }
 
     function handleMouseMove(e) {
-      // let canvas = document.getElementById("canvas");
       if (isTargetIntersected(e, cube.cube)) {
         mountNode.classList.add("active");
       } else if (mountNode.classList.contains("active")) {
@@ -324,9 +354,11 @@ const Canvas = () => {
 
     function animate() {
       render();
-      let xTarget = mousePos.x - windowHalfX + cameraPosXOffset - 50;
+      let xTarget = mousePos.x - windowHalfX + cameraPos.x - 50;
       let yTarget = mousePos.y - windowHalfY;
-      cube.look(xTarget, yTarget);
+      if (!isMobile) {
+        cube.look(xTarget, yTarget);
+      }
 
       if (showCoin) {
         coinAnimation(10);
@@ -351,6 +383,11 @@ const Canvas = () => {
     }
 
     function cleanUp() {
+      // remove everything attached to window object and event listeners
+      window.removeEventListener("resize", onWindowResize);
+      mountNode.removeEventListener("mousemove", handleMouseMove);
+      mountNode.removeEventListener("click", onTargetClick);
+      mountNode.removeChild(renderer.domElement);
       scene.remove(cube.cube);
       scene.remove(coin);
       scene.remove(floor);
@@ -365,12 +402,7 @@ const Canvas = () => {
 
     return () => {
       // componentwillUnmount
-      // remove everything attached to window object, event listeners and clean up
       stop();
-      window.removeEventListener("resize", onWindowResize);
-      mountNode.removeEventListener("mousemove", handleMouseMove);
-      mountNode.removeEventListener("click", onTargetClick);
-      mountNode.removeChild(renderer.domElement);
       cleanUp();
     };
   }, []);

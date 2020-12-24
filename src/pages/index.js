@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Layout } from "../components";
 import Canvas from "../components/Canvas";
+import { deviceSize } from "../constants/deviceSize";
 import styled from "styled-components";
 
 const Content = styled.div`
@@ -8,6 +9,15 @@ const Content = styled.div`
   display: flex;
   flex: 1;
   align-items: center;
+
+  @media (max-width: ${deviceSize.tabletL}) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: ${deviceSize.mobileL}) and (orientation: portrait) {
+    align-items: flex-end;
+    padding: 0 0 100px 0;
+  }
 `;
 
 const HeroContainer = styled.div`
@@ -17,6 +27,15 @@ const HeroContainer = styled.div`
   justify-content: flex-end;
   z-index: 1;
   user-select: none;
+
+  @media (max-width: ${deviceSize.tabletL}) {
+    padding-right: 0;
+  }
+
+  @media (max-width: ${deviceSize.mobileL}) and (orientation: portrait) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const HeroText = styled.div`
@@ -28,11 +47,23 @@ const HeroText = styled.div`
     font-size: 28px;
     margin-bottom: 16px;
     font-weight: 700;
+
+    @media (max-width: ${deviceSize.tabletL}) {
+      font-size: 26px;
+    }
+
+    @media (max-width: ${deviceSize.mobileL}) {
+      font-size: 20px;
+    }
   }
 
   > :nth-child(2) {
     font-size: 18px;
     line-height: 24px;
+
+    @media (max-width: ${deviceSize.tabletL}) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -50,6 +81,10 @@ const Horizon = styled.div`
   top: 0;
   left: 0;
   z-index: -1;
+
+  @media (max-width: ${deviceSize.mobile}) {
+    height: 40%;
+  }
 `;
 
 const IndexPage = () => {
