@@ -14,7 +14,7 @@ const CanvasContainer = styled.div`
   z-index: 0;
 
   &.active {
-    cursor: url(${imagePath("./canvas/cursor-hand.png")}) 0 0, pointer;
+    cursor: url(${imagePath("./cursor-hand.png")}) 0 0, pointer;
   }
 `;
 

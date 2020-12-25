@@ -72,7 +72,7 @@ export const SKILLS = [
   },
   {
     name: "GraphQL",
-    imgSrc: "./logo_graphql.png",
+    imgSrc: "./logo_graphql_1.png",
   },
   {
     name: "SASS",
@@ -84,7 +84,7 @@ export const SKILLS = [
   },
   {
     name: "Jest",
-    imgSrc: "./logo_jest.png",
+    imgSrc: "./logo_jest_1.png",
   },
   {
     name: "Node.js",
@@ -100,7 +100,7 @@ export const SKILLS = [
   },
   {
     name: "Three.js",
-    imgSrc: "./logo_threejs.png",
+    imgSrc: "./logo_threejs_1.png",
   },
   {
     name: "Continuous learning",
@@ -215,16 +215,16 @@ export const PROJECT_FILTERS = [
 export const CANVAS_ASSETS = {
   texture: {
     coin:[
-      "./canvas/logo_react.png",
-      "./canvas/logo_redux.png",
-      "./canvas/logo_vue.png",
-      "./canvas/logo_angular.png",
-      "./canvas/logo_jest.png",
-      "./canvas/logo_graphql.png",
-      "./canvas/logo_node.png",
-      "./canvas/logo_gsap.png",
-      "./canvas/logo_threejs.png",
+      "./logo_react.png",
+      "./logo_redux.png",
+      "./logo_vue.png",
+      "./logo_angular.png",
+      "./logo_jest.png",
+      "./logo_graphql.png",
+      "./logo_node.png",
+      "./logo_gsap.png",
+      "./logo_threejs.png",
      ],
-     cube: "./canvas/texture_brick.png"
+     cube: "./texture_brick.png"
   }
 }
