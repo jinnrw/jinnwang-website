@@ -19,7 +19,12 @@ const CanvasContainer = styled.div`
 `;
 
 // Utils
-let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// Check to avoid build errors in Server-side rendering on Node server
+const isSSR = typeof window === "undefined"; 
+let isMobile;
+if (!isSSR) {
+  isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
+}
 
 function rule3(v, vmin, vmax, tmin, tmax) {
   let nv = Math.max(Math.min(v, vmax), vmin);
