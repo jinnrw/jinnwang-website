@@ -270,7 +270,9 @@ const Canvas = () => {
 
     // Coin
     const createCoin = function () {
-      let texture = new THREE.TextureLoader().load(coinTextureAssets[0]);
+      let texture = new THREE.TextureLoader().load(
+        imagePath(coinTextureAssets[0])
+      );
       let coinBodyMat = [
         new THREE.MeshStandardMaterial({ color: 0xffde65 }),
         new THREE.MeshStandardMaterial({ color: 0xffde65 }),
