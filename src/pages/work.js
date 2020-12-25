@@ -2,14 +2,16 @@ import * as React from "react";
 import { Layout, Footer } from "../components";
 import styled from "styled-components";
 import { PROJECTS, PROJECT_FILTERS } from "../constants";
+import { colors } from "../constants/globalStyle";
 import { imagePath } from "../utils/imagePath";
 
 const Content = styled.div`
   width: 100%;
   max-width: 1440px;
   margin: 80px auto 0;
-  padding: 0 80px 200px;
+  padding: 0 80px;
   display: flex;
+  flex: 1;
 `;
 
 // Filters
@@ -33,18 +35,19 @@ const Filter = styled.div`
   margin-bottom: 14px;
   padding-left: 20px;
   display: inline-block;
-  color: #24262870;
-  transition: color .2s ease;
+  color: ${colors.lightText};
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #242628;
+    color: ${colors.text};
   }
 
   &.selected {
-    color: #242628;
+    color: ${colors.text};
 
     &:before {
       background-color: #3eb0efcc;
+      ${"" /* background-color: colors.lightblue; */}
     }
   }
 
@@ -57,7 +60,7 @@ const Filter = styled.div`
     height: 16px;
     border-radius: 4px;
     background-color: #8a8f9b;
-    transition: background-color .2s ease;
+    transition: background-color 0.2s ease;
   }
 `;
 
@@ -90,6 +93,7 @@ const Tags = styled.div`
 `;
 
 const Tag = styled.span`
+  display: inline-block;
   margin-right: 12px;
 
   &.selected {
@@ -103,7 +107,7 @@ const Tag = styled.span`
       width: calc(100% + 10px);
       height: 100%;
       transform: skew(-30deg);
-      background: #3eb0ef60;
+      background-color: ${colors.lightblue};
       z-index: -1;
     }
   }
@@ -115,11 +119,11 @@ const ProjectLink = styled.a`
     line-height: 37px;
     text-align: center;
     border-radius: 5px;
-    border: 1px solid #cbdfeb;
+    border: 1px solid ${colors.border};
     transition: all .2s ease;
 
     &:hover {
-        border-color: #242628;
+        border-color: ${colors.text};
       }
     }
 `;
@@ -233,9 +237,7 @@ const Work = () => {
           ) : (
             <MoreProjects>
               <h2>More Projects To Come</h2>
-              <p>
-                I'll be sharing more side projects in the future :)
-              </p>
+              <p>I'll be sharing more side projects in the future :)</p>
             </MoreProjects>
           )}
         </ProjectContainer>

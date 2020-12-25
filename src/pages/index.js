@@ -45,8 +45,8 @@ const HeroText = styled.div`
 
   > :first-child {
     font-size: 28px;
-    margin-bottom: 16px;
     font-weight: 700;
+    margin-bottom: 16px;
 
     @media (max-width: ${deviceSize.tabletL}) {
       font-size: 26px;
@@ -59,7 +59,6 @@ const HeroText = styled.div`
 
   > :nth-child(2) {
     font-size: 18px;
-    line-height: 24px;
 
     @media (max-width: ${deviceSize.tabletL}) {
       font-size: 16px;

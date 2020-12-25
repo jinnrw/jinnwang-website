@@ -4,10 +4,7 @@ import logo_github from "../assets/logo_github.png";
 import styled from "styled-components";
 
 const FooterContainer = styled.div`
-  width: 100%;
-  padding: 20px;
-  position: absolute;
-  bottom: 0;
+  padding: 20px 0;
 `;
 
 const Content = styled.div`

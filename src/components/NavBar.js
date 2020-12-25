@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import Logo from "./Logo";
 import styled, { css } from "styled-components";
+import { colors } from "../constants/globalStyle";
 
 const NavBarContainer = styled.ul`
   display: flex;
@@ -26,7 +27,7 @@ const LinkContainer = styled.div`
   }
 
   a {
-    color: #8a8f9b;
+    color: ${colors.grey};
   }
 `;
 

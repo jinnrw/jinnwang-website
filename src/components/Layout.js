@@ -2,6 +2,7 @@ import * as React from "react";
 import NavBar from "./NavBar";
 import styled, { createGlobalStyle } from "styled-components";
 import { Helmet } from "react-helmet";
+import { colors } from "../constants/globalStyle";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -11,11 +12,6 @@ const LayoutContainer = styled.div`
   position: relative;
 `;
 
-const globalColors = {
-  blue: "#3eb0ef",
-  lightblue: "#3eb0ef60",
-}
-
 const GlobalStyle = createGlobalStyle`
   body, 
   h1,
@@ -23,18 +19,18 @@ const GlobalStyle = createGlobalStyle`
   h3,
   h4,
   p {
-    font-family: 'Inter',sans-serif;
-    color: #242628;
+    font-family: 'Nunito Sans',sans-serif;
+    color: ${colors.text};
   }
 
   body {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   code {
     font-family: 'Fira Mono', sans-serif;
     color: #383838;
-    background-color: ${globalColors.lightblue};
+    background-color: ${colors.lightblue};
     font-size: 0.9em;
   }
 
@@ -42,34 +38,34 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     background-color: transparent;
     color: inherit;
-    
-    &:before {
+    display: inline-block;
+    margin: 0;
+
+    &:before,
+    &:after {
       content: "";
-      pointer-events: none;
       position: absolute;
+      border: 2px solid ${colors.textHighlight};
+      opacity: 0.7;
+    }
+
+    &:before {
       left: -5px;
-      top: 2px;
-      border: 2px solid ${globalColors.blue};
+      top: 4px;
       border-right-color: transparent;
       width: 117%;
       height: 22px;
       transform: rotate(2deg);
-      opacity: 0.7;
       border-radius: 8px;
     }
 
     &:after {
-      content: "";
-      position: absolute;
-      left: -0.5em;
-      top: 0.1em;
-      border: 2px solid ${globalColors.blue};
+      left: 0;
+      top: 4px;
       border-left-color: transparent;
       border-top-color: transparent;
-      width: 115%;
+      width: 105%;
       height: 24px;
-      transform: rotate(-1deg);
-      opacity: 0.7;
     }
   }
 

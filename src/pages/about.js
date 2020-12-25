@@ -3,22 +3,27 @@ import { Layout, Footer, Skills } from "../components";
 import { ABOUT_ME, WORK_EXPERIENCE } from "../constants";
 import styled from "styled-components";
 import { imagePath } from "../utils/imagePath";
+import { deviceSize } from "../constants/deviceSize";
 
 // CONTENT
 const Content = styled.div`
-  max-width: 1000px;
+  width: 100%;
+  max-width: 840px;
   margin: 80px auto 0;
-  padding: 0 80px 200px;
 `;
 
 // SECTION
 const Section = styled.div`
   margin-bottom: 100px;
+
+  @media (max-width: ${deviceSize.mobileL}) {
+    margin-bottom: 60px;
+  }
 `;
 
 const Heading = styled.h2`
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 40px;
   text-transform: Uppercase;
 `;
@@ -26,17 +31,25 @@ const Heading = styled.h2`
 // ABOUT ME
 const AboutMeText = styled.div`
   white-space: pre-line;
-  line-height: 28px;
+  line-height: 30px;
 `;
 
 // EXPERIENCE
 const ExperienceContainer = styled.div`
   padding: 0 20px;
+
+  @media (max-width: ${deviceSize.mobileL}) {
+    padding: 0;
+  }
 `;
 
 const Experience = styled.div`
   display: flex;
   margin-bottom: 60px;
+
+  @media (max-width: ${deviceSize.mobileL}) {
+    margin-bottom: 30px;
+  }
 
   .period {
     font-size: 14px;
@@ -49,6 +62,11 @@ const Experience = styled.div`
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 10px;
+
+    @media (max-width: ${deviceSize.mobileL}) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   .company {
@@ -64,6 +82,12 @@ const Thumbnail = styled.div`
   width: 120px;
   height: 120px;
   margin-right: 40px;
+
+  @media (max-width: ${deviceSize.mobileL}) {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
 `;
 
 const renderExperience = (id, company, title, summary, period, index) => {
@@ -121,7 +145,7 @@ const About = (props) => {
         </Section>
         <Section>
           <Heading>Skills</Heading>
-            <Skills />
+          <Skills />
         </Section>
       </Content>
       <Footer />
