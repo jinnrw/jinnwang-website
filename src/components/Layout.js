@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import styled, { createGlobalStyle } from "styled-components";
 import { Helmet } from "react-helmet";
 import { colors } from "../constants/globalStyle";
+import { deviceSize } from "../constants/deviceSize";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -19,12 +20,35 @@ const GlobalStyle = createGlobalStyle`
   h3,
   h4,
   p {
-    font-family: 'Nunito Sans',sans-serif;
+    font-family: 'Inter',sans-serif;
     color: ${colors.text};
   }
 
   body {
     font-size: 17px;
+  
+    @media (max-width: ${deviceSize.tablet}) {
+      font-size: 16px;
+    }
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    text-transform: Uppercase;
+
+    @media (max-width: ${deviceSize.tabletL}) {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: ${deviceSize.tablet}) {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 12px;
+    }
   }
 
   code {

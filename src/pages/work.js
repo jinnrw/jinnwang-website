@@ -3,30 +3,57 @@ import { Layout, Footer } from "../components";
 import styled from "styled-components";
 import { PROJECTS, PROJECT_FILTERS } from "../constants";
 import { colors } from "../constants/globalStyle";
+import { deviceSize } from "../constants/deviceSize";
 import { imagePath } from "../utils/imagePath";
 
 const Content = styled.div`
   width: 100%;
-  max-width: 1440px;
+  max-width: 1150px;
   margin: 80px auto 0;
-  padding: 0 80px;
   display: flex;
   flex: 1;
+
+  @media (max-width: ${deviceSize.tabletL}) {
+    max-width: 920px;
+  }
+
+  @media (max-width: ${deviceSize.tablet}) {
+    flex-direction: column;
+    margin-top: 0;
+  }
 `;
 
 // Filters
 const FilterContainer = styled.div`
-  position: fixed;
-  top: 180px;
-  height: 300px;
-  width: 200px;
-  margin-right: 80px;
+  position: sticky;
+  top: 160px;
+  height: 400px;
+  z-index: 1;
+  padding-right: 50px;
+  
+  @media (max-width: ${deviceSize.tablet}) {
+    height: auto;
+    background-color: #fff;
+    padding: 30px 0 10px;
+    top: 80px;
+
+    > :first-child {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const Filters = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media (max-width: ${deviceSize.tablet}) {
+    flex-direction: row;
+    overflow-y: auto;
+    gap: 16px;
+    padding: 20px 0;
+  }
 `;
 
 const Filter = styled.div`
@@ -37,6 +64,7 @@ const Filter = styled.div`
   display: inline-block;
   color: ${colors.lightText};
   transition: color 0.2s ease;
+  white-space: nowrap;
 
   &:hover {
     color: ${colors.text};
@@ -62,18 +90,38 @@ const Filter = styled.div`
     background-color: #8a8f9b;
     transition: background-color 0.2s ease;
   }
+
+  @media (max-width: ${deviceSize.tablet}) {
+    margin-bottom: 0;
+    padding-left: 16px;
+  }
 `;
 
 // Projects
 const ProjectContainer = styled.div`
-  width: 67%;
+  width: 75%;
   margin: 0 auto;
-  margin-right: 100px;
+
+  @media (max-width: ${deviceSize.tablet}) {
+    width: 100%;
+    padding: 0 20px;
+  }
 `;
 
 const Project = styled.div`
   display: flex;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
+
+  @media (max-width: ${deviceSize.tabletL}) {
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: ${deviceSize.tablet}) {
+    flex-direction: column;
+    border-bottom: 1px solid ${colors.border};
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
 `;
 
 const ProjectInfo = styled.div`
@@ -83,6 +131,12 @@ const ProjectInfo = styled.div`
   .description {
     margin-bottom: 28px;
     white-space: pre-line;
+  }
+
+  @media (max-width: ${deviceSize.tablet}) {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-right: 0;
   }
 `;
 
@@ -130,6 +184,7 @@ const ProjectLink = styled.a`
 
 const ProjectImage = styled.div`
   max-width: 450px;
+  margin: 0 auto;
 
   img {
     width: 100%;
@@ -140,6 +195,9 @@ const ProjectImage = styled.div`
 
 const MoreProjects = styled.div`
   margin-bottom: 200px;
+  @media (max-width: ${deviceSize.tabletL}) {
+    margin-bottom: 80px;
+  }
 `;
 
 // render
@@ -215,16 +273,16 @@ const Work = () => {
     <Layout>
       <Content>
         <FilterContainer>
-          <h3>My Works</h3>
-          <Filter
-            onClick={() => {
-              setFilterBy(null);
-            }}
-            className={filterBy ? "" : "selected"}
-          >
-            Show All
-          </Filter>
+          <h2>My Works</h2>
           <Filters>
+            <Filter
+              onClick={() => {
+                setFilterBy(null);
+              }}
+              className={filterBy ? "" : "selected"}
+            >
+              Show All
+            </Filter>
             {PROJECT_FILTERS.map((filter) =>
               renderFilter(filter, filterBy, setFilterBy)
             )}

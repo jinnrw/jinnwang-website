@@ -21,13 +21,6 @@ const Section = styled.div`
   }
 `;
 
-const Heading = styled.h2`
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 40px;
-  text-transform: Uppercase;
-`;
-
 // ABOUT ME
 const AboutMeText = styled.div`
   white-space: pre-line;
@@ -48,7 +41,7 @@ const Experience = styled.div`
   margin-bottom: 60px;
 
   @media (max-width: ${deviceSize.mobileL}) {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   .period {
@@ -121,7 +114,7 @@ const About = (props) => {
     <Layout>
       <Content>
         <Section>
-          <Heading>About Me</Heading>
+          <h2>About Me</h2>
           <AboutMeText
             dangerouslySetInnerHTML={{
               __html: ABOUT_ME,
@@ -129,7 +122,7 @@ const About = (props) => {
           ></AboutMeText>
         </Section>
         <Section>
-          <Heading>Work Experience</Heading>
+          <h2>Work Experience</h2>
           <ExperienceContainer>
             {WORK_EXPERIENCE.map((work, index) =>
               renderExperience(
@@ -144,7 +137,7 @@ const About = (props) => {
           </ExperienceContainer>
         </Section>
         <Section>
-          <Heading>Skills</Heading>
+          <h2>Skills</h2>
           <Skills />
         </Section>
       </Content>
