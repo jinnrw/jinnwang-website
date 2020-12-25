@@ -2,6 +2,7 @@ import * as THREE from "three";
 import * as React from "react";
 import styled from "styled-components";
 import { CANVAS_ASSETS } from "../constants";
+import { cursorPointer } from "../constants/imageUri";
 import { imagePath } from "../utils/imagePath";
 
 const CanvasContainer = styled.div`
@@ -14,13 +15,13 @@ const CanvasContainer = styled.div`
   z-index: 0;
 
   &.active {
-    cursor: url(${imagePath("./cursor-hand.png")}) 0 0, pointer;
+    cursor: url(${cursorPointer}) 10 10,pointer;
   }
 `;
 
 // Utils
 // Check to avoid build errors in Server-side rendering on Node server
-const isSSR = typeof window === "undefined"; 
+const isSSR = typeof window === "undefined";
 let isMobile;
 if (!isSSR) {
   isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);

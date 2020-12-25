@@ -28,6 +28,7 @@ const LinkContainer = styled.div`
 
   a {
     color: ${colors.grey};
+    user-select: none;
   }
 `;
 
