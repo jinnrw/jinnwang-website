@@ -8,7 +8,6 @@ const FooterContainer = styled.div`
 `;
 
 const Content = styled.div`
-  width: 200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -22,9 +21,9 @@ const Divider = styled.div`
 `;
 
 const SocialLinks = styled.div`
+  width: 100px;
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
   margin-bottom: 30px;
 
   > a {

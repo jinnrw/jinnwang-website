@@ -16,7 +16,7 @@ const Content = styled.div`
 
   @media (max-width: ${deviceSize.mobileL}) and (orientation: portrait) {
     align-items: flex-end;
-    padding: 0 0 100px 0;
+    padding: 0;
   }
 `;
 

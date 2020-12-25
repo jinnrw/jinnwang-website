@@ -11,7 +11,7 @@ const SkillsContainer = styled.div`
   grid-template-columns: repeat(7, 90px);
   grid-gap: 32px;
 
-  @media (max-width: ${deviceSize.tablet}) {
+  @media (max-width: 812px) {
     grid-gap: 16px;
   }
 
@@ -30,7 +30,10 @@ const SkillsContainer = styled.div`
 const SkillsColumn = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+
+  > :first-child {
+    margin-bottom: 20px;
+  }
 
   @media (min-width: ${deviceSize.tablet}) {
     :first-child {
@@ -52,8 +55,8 @@ const SkillsColumn = styled.div`
 `;
 
 const Skill = styled.div`
-  width: 92px;
-  height: 92px;
+  width: 90px;
+  height: 90px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.05), 0 3px 10px 0 rgba(0, 0, 0, 0.01),

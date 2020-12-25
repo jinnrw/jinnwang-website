@@ -10,6 +10,11 @@ const Content = styled.div`
   width: 100%;
   max-width: 840px;
   margin: 80px auto 0;
+  padding: 0 10px;
+
+  @media (max-width: ${deviceSize.tablet}) {
+    margin-top: 10px;
+  }
 `;
 
 // SECTION

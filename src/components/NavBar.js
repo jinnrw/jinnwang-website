@@ -9,9 +9,9 @@ const NavBarContainer = styled.ul`
   justify-content: space-between;
   align-items: center;
   position: sticky;
-  top: 0px;
-  padding: 20px 10px 0;
-  z-index: 1;
+  top: 0;
+  padding: 20px 0;
+  z-index: 2;
   background-color: #fff;
 
   ${(props) =>

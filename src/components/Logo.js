@@ -7,8 +7,8 @@ const LogoContainer = styled.div`
   margin-right: 20px;
 
   > a {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: block;
   }
 

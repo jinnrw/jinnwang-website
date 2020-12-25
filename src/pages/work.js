@@ -10,6 +10,7 @@ const Content = styled.div`
   width: 100%;
   max-width: 1150px;
   margin: 80px auto 0;
+  padding: 0 10px;
   display: flex;
   flex: 1;
 
@@ -34,8 +35,8 @@ const FilterContainer = styled.div`
   @media (max-width: ${deviceSize.tablet}) {
     height: auto;
     background-color: #fff;
-    padding: 30px 0 10px;
-    top: 80px;
+    padding: 10px 0 10px;
+    top: 90px;
 
     > :first-child {
       margin-bottom: 0;
@@ -51,7 +52,6 @@ const Filters = styled.div`
   @media (max-width: ${deviceSize.tablet}) {
     flex-direction: row;
     overflow-y: auto;
-    gap: 16px;
     padding: 20px 0;
   }
 `;
@@ -93,6 +93,7 @@ const Filter = styled.div`
 
   @media (max-width: ${deviceSize.tablet}) {
     margin-bottom: 0;
+    margin-right: 16px;
     padding-left: 16px;
   }
 `;

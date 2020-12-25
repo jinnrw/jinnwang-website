@@ -11,6 +11,10 @@ const LayoutContainer = styled.div`
   min-height: 100vh;
   padding: 0 20px;
   position: relative;
+
+  @media (max-width: ${deviceSize.mobileL}) {
+    min-height: 85vh;
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`
