@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 28px;
-    text-transform: Uppercase;
 
     @media (max-width: ${deviceSize.tabletL}) {
       font-size: 20px;
