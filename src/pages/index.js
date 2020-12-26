@@ -25,8 +25,7 @@ const HeroContainer = styled.div`
   padding-right: 100px;
   display: flex;
   justify-content: flex-end;
-  z-index: 1;
-  user-select: none;
+  z-index: -1;
 
   @media (max-width: ${deviceSize.tabletL}) {
     padding-right: 0;
@@ -91,7 +90,6 @@ const IndexPage = () => {
     <Layout page="home">
       <Content>
         <Horizon></Horizon>
-        <Canvas />
         <HeroContainer>
           <HeroText>
             <div>
@@ -104,6 +102,7 @@ const IndexPage = () => {
             </div>
           </HeroText>
         </HeroContainer>
+        <Canvas />
       </Content>
     </Layout>
   );
