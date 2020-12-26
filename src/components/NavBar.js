@@ -28,12 +28,16 @@ const LinkContainer = styled.div`
 
   a {
     color: ${colors.grey};
-    user-select: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
 const linkStyles = {
   color: "inherit",
+  textDecoration: "none",
 };
 
 const NavBar = (props) => {
