@@ -13,6 +13,7 @@ const NavBarContainer = styled.ul`
   padding: 20px 0;
   z-index: 2;
   background-color: #fff;
+  user-select: none;
 
   ${(props) =>
     props.page &&
