@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
     margin-bottom: 28px;
 
@@ -50,8 +50,16 @@ const GlobalStyle = createGlobalStyle`
     @media (max-width: ${deviceSize.tablet}) {
       font-size: 18px;
       line-height: 22px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
+  }
+
+  h3 {
+    margin-bottom: 14px;
+  }
+
+  p {
+    line-height: 1.75;
   }
 
   code {
@@ -104,6 +112,11 @@ const GlobalStyle = createGlobalStyle`
   ul,
   img {
     margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   ul {

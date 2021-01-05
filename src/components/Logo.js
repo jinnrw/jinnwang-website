@@ -1,19 +1,17 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import logoSrc from "../assets/hero_avatar.png";
+import { imagePath } from "../utils/imagePath";
 import styled from "styled-components";
 
 const LogoContainer = styled.div`
   margin-right: 20px;
 
   > a {
-    width: 50px;
-    height: 50px;
-    display: block;
-  }
-
-  img {
-    height: 100%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -21,7 +19,7 @@ const Logo = () => {
   return (
     <LogoContainer>
       <Link to="/">
-        <img src={logoSrc} alt="logo" />
+        <img src={imagePath("./avatar.png")} alt="logo" />
       </Link>
     </LogoContainer>
   );

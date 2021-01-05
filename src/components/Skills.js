@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SKILLS } from "../constants";
+import { SKILLS } from "../constants/about";
 import styled from "styled-components";
 import { imagePath } from "../utils/imagePath";
 import { deviceSize } from "../constants/deviceSize";

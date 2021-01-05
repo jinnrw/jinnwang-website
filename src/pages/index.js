@@ -26,6 +26,7 @@ const HeroContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   user-select: none;
+  z-index: 1;
 
   @media (max-width: ${deviceSize.tabletL}) {
     padding-right: 0;
