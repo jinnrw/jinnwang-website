@@ -1,9 +1,6 @@
 import * as React from "react";
 import { Layout, Footer, Skills } from "../components";
-import {
-  BIO_INFO,
-  WORK_EXPERIENCE,
-} from "../constants/about";
+import { BIO_INFO, WORK_EXPERIENCE } from "../constants/about";
 import styled from "styled-components";
 import { deviceSize } from "../constants/deviceSize";
 
@@ -30,8 +27,6 @@ const Section = styled.div`
 
 // ABOUT ME
 const AboutMe = styled.div`
-  display: flex;
-
   p {
     margin-bottom: 0;
   }
@@ -93,6 +88,17 @@ const About = (props) => {
           <h2>About Me</h2>
           <AboutMe>
             <p>{BIO_INFO}</p>
+            <p>
+              I blog about web development and JavaScript at &nbsp;
+              <a
+                href="https://blog.jinnwang.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                blog.jinnwang.com
+              </a>
+              .
+            </p>
           </AboutMe>
         </Section>
         <Section>

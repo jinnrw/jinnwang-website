@@ -1,4 +1,4 @@
-export const BIO_INFO = `Frontend developer. JavaScript fan. Likes computer science, sci-fi and lo-fi music. Enjoys learning cool things on the web.`
+export const BIO_INFO = `Frontend developer. JavaScript fan. Likes computer science, sci-fi and lo-fi music.`
 
 // export const ABOUT_ME = `My area of expertise is frontend development and everything related to the client-side. \n 
 // My emphasis is frontend technologies and modern Javascript frameworks, and I’m passionate about building web-based UI, interaction and writing high quality codes. \n 

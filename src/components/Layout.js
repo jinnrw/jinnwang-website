@@ -144,6 +144,9 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+  p a {
+    text-decoration: underline;
+  }
 
 ${"" /* To fix select all page content issue when triple clicking */}
   #gatsby-announcer {
