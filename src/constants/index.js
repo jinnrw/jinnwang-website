@@ -89,6 +89,24 @@ export const PROJECTS = [
     imgSrc: "./project_flappy_chicken.png",
     linkUrl: "https://jinnrw.surge.sh/",
   },
+  {
+    id: 11,
+    name: "Search with vanilla JavaScript",
+    description: "Create a search function and display word count from scratch",
+    tags: ["Mini Projects"],
+    imgSrc: "./search-mini.png",
+    linkUrl: "https://jsfiddle.net/jinnwang/b0v8gkta/",
+  },
+  {
+    id: 12,
+    name: " Multiple fetch requests and responses handling",
+    description:
+      "A proof of concept to show how two API requests can be handled if one relies on another's return. Using Node, Express and JavaScript.",
+    tags: ["Node.js", "Mini Projects"],
+    imgSrc: "./fetch-poc-mini.png",
+    linkUrl:
+      "https://codesandbox.io/s/multiple-fetch-requests-and-response-handling-zpvci?file=/public/javascripts/app.js",
+  },
 ];
 
 export const PROJECT_FILTERS = [
@@ -100,11 +118,12 @@ export const PROJECT_FILTERS = [
   "WebGL",
   "Animation",
   "HTML Canvas",
+  "Mini Projects",
 ];
 
 export const CANVAS_ASSETS = {
   texture: {
-    coin:[
+    coin: [
       "./logo_react.png",
       "./logo_redux.png",
       "./logo_vue.png",
@@ -114,7 +133,7 @@ export const CANVAS_ASSETS = {
       "./logo_node.png",
       "./logo_gsap.png",
       "./logo_threejs.png",
-     ],
-     cube: "./texture_brick.png"
-  }
-}
+    ],
+    cube: "./texture_brick.png",
+  },
+};

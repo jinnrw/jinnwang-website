@@ -31,7 +31,7 @@ const FilterContainer = styled.div`
   height: 400px;
   z-index: 1;
   padding-right: 50px;
-  
+
   @media (max-width: ${deviceSize.tablet}) {
     height: auto;
     background-color: #fff;
@@ -291,9 +291,7 @@ const Work = () => {
         </FilterContainer>
         <ProjectContainer>
           {renderProjects(filterBy, projects)}
-          {filterBy ? (
-            <></>
-          ) : (
+          {!filterBy && (
             <MoreProjects>
               <h2>More Projects To Come</h2>
               <p>I'll be sharing more side projects in the future :)</p>
