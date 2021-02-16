@@ -1,6 +1,7 @@
 import * as React from "react";
 import logo_linkedin from "../assets/logo_linkedin.png";
 import logo_github from "../assets/logo_github.png";
+import icon_resume from "../assets/icon_resume.svg";
 import styled from "styled-components";
 
 const FooterContainer = styled.div`
@@ -21,7 +22,7 @@ const Divider = styled.div`
 `;
 
 const SocialLinks = styled.div`
-  width: 100px;
+  width: 150px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -60,9 +61,12 @@ const Footer = () => {
           <a href="https://github.com/jinnrw" target="_blank" rel="noreferrer">
             <img src={logo_github} alt="GitHub" />
           </a>
+          <a href="https://resume.jinnwang.com/" target="_blank" rel="noreferrer">
+            <img src={icon_resume} alt="Resume" />
+          </a>
         </SocialLinks>
         <FooterTag>
-          <div>Jinn Wang © 2020</div>
+          <div>Jinn Wang © 2021</div>
           <div>Vancouver, Canada</div>
         </FooterTag>
       </Content>
