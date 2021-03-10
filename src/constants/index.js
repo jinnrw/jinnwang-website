@@ -54,6 +54,15 @@ export const PROJECTS = [
   },
   {
     id: 7,
+    name: "Pixel Tile Maker",
+    description:
+      "A weekend project to create a builder for pixel-style tilesets and backgrounds.",
+    tags: ["HTML Canvas"],
+    imgSrc: "./project_pixel.png",
+    linkUrl: "https://github.com/jinnrw/pixel-tile-maker",
+  },
+  {
+    id: 8,
     name: "HTML Canvas Platform Game",
     description:
       "A platform game includes camera, player movements, game physics and controls. \n Definitely small and unfinished, but I really enjoyed being completely lost in the begining but was able to overcome in the end :)",
@@ -62,7 +71,7 @@ export const PROJECTS = [
     linkUrl: "https://github.com/jinnrw/html-canvas-platform-game",
   },
   {
-    id: 8,
+    id: 9,
     name: "Apple TV Prototype with Framer (Using Game Controller)",
     description:
       "An interactive prototype that can be controlled using a PS4 controller. Project was featured on framer.com.",
@@ -72,7 +81,7 @@ export const PROJECTS = [
       "https://blog.framer.com/apple-tv-prototype-with-framer-using-game-controller-59f1fc3d3b0f",
   },
   {
-    id: 9,
+    id: 10,
     name: "Music App Animation",
     description:
       "A demo app showcases UI and animations. Built with TweenMax – more than 29,000 views!",
@@ -81,7 +90,7 @@ export const PROJECTS = [
     linkUrl: "https://codepen.io/jinnrw/full/ggpgVe",
   },
   {
-    id: 10,
+    id: 11,
     name: "Flappy Chicken Web Game",
     description:
       "My first ever game made – a flappy bird clone! And yes, the flappy chicken was designed to be big : ) ",
@@ -90,7 +99,7 @@ export const PROJECTS = [
     linkUrl: "https://jinnrw.surge.sh/",
   },
   {
-    id: 11,
+    id: 12,
     name: "Search with vanilla JavaScript",
     description: "Create a search function and display word count from scratch",
     tags: ["Mini Projects"],
@@ -98,7 +107,7 @@ export const PROJECTS = [
     linkUrl: "https://jsfiddle.net/jinnwang/b0v8gkta/",
   },
   {
-    id: 12,
+    id: 13,
     name: " Multiple fetch requests and responses handling",
     description:
       "A proof of concept to show how two API requests can be handled if one relies on another's return. Using Node, Express and JavaScript.",

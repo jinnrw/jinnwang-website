@@ -99,7 +99,7 @@ const Filter = styled.div`
 `;
 
 // Projects
-const ProjectContainer = styled.div`
+const AllProjects = styled.div`
   width: 75%;
   margin: 0 auto;
 
@@ -109,7 +109,7 @@ const ProjectContainer = styled.div`
   }
 `;
 
-const Project = styled.div`
+const ProjectConatiner = styled.div`
   display: flex;
   margin-bottom: 150px;
 
@@ -243,7 +243,7 @@ const renderProject = (
   linkUrl,
   filterBy
 ) => (
-  <Project key={id}>
+  <ProjectConatiner key={id}>
     <ProjectInfo>
       <Tags>
         {tags.map((tag, index) => (
@@ -263,10 +263,10 @@ const renderProject = (
         <img src={imagePath(imgSrc)} alt={name} />
       </ProjectImage>
     </a>
-  </Project>
+  </ProjectConatiner>
 );
 
-const Work = () => {
+const Project = () => {
   const projects = PROJECTS;
   const [filterBy, setFilterBy] = React.useState(null);
 
@@ -274,7 +274,7 @@ const Work = () => {
     <Layout>
       <Content>
         <FilterContainer>
-          <h2>My Works</h2>
+          <h2>Projects</h2>
           <Filters>
             <Filter
               onClick={() => {
@@ -289,7 +289,7 @@ const Work = () => {
             )}
           </Filters>
         </FilterContainer>
-        <ProjectContainer>
+        <AllProjects>
           {renderProjects(filterBy, projects)}
           {!filterBy && (
             <MoreProjects>
@@ -297,11 +297,11 @@ const Work = () => {
               <p>I'll be sharing more side projects in the future :)</p>
             </MoreProjects>
           )}
-        </ProjectContainer>
+        </AllProjects>
       </Content>
       <Footer />
     </Layout>
   );
 };
 
-export default Work;
+export default Project;

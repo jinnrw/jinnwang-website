@@ -52,8 +52,8 @@ const NavBar = (props) => {
         <Link to="/about" activeStyle={linkStyles}>
           About
         </Link>
-        <Link to="/work" activeStyle={linkStyles}>
-          Work
+        <Link to="/project" activeStyle={linkStyles}>
+          Project
         </Link>
       </LinkContainer>
     </NavBarContainer>
