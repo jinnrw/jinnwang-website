@@ -46,6 +46,8 @@ const FooterTag = styled.div`
 `;
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <FooterContainer>
       <Content>
@@ -66,7 +68,7 @@ const Footer = () => {
           </a>
         </SocialLinks>
         <FooterTag>
-          <div>Jinn Wang © 2021</div>
+          <div>Jinn Wang © {currentYear}</div>
           <div>Vancouver, Canada</div>
         </FooterTag>
       </Content>
