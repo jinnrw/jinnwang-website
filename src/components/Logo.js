@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { imagePath } from "../utils/imagePath";
+import avatar from "../assets/avatar.png" 
 import styled from "styled-components";
 
 const LogoContainer = styled.div`
@@ -19,7 +19,7 @@ const Logo = () => {
   return (
     <LogoContainer>
       <Link to="/">
-        <img src={imagePath("./avatar.png")} alt="logo" />
+        <img src={avatar} alt="avatar" />
       </Link>
     </LogoContainer>
   );
